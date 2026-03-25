@@ -16,6 +16,8 @@ body:
         ``` yaml
         Paste your config.yml here
         ```
+    validations:
+      required: true
   - type: textarea
     attributes:
       label: Describe the issue
