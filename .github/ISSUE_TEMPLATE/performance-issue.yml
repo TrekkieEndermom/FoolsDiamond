@@ -1,0 +1,51 @@
+name: Performance Issue
+description: Report any performance issues, including high memory usage or crash with Out of Memory exception.
+labels: ["performance"]
+body:
+  - type: textarea
+    attributes:
+      label: Server version and platform
+      description: Run `/version` and paste the full output here.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        For this kind of issue, Spark profiles are crucial to the investigation. You must share
+        all profiles as links rather than a screenshots, otherwise the report will be rejected!
+        The profile should be taken while the poor performance occured, not before or long after.
+        In some cases, you might be asked to provide more information if I couldn't determine
+        the root cause in any of your profiles.
+        [Read the guide on Spark profiler here.](https://spark.lucko.me/docs/Command-Usage)
+
+        If the issue is related to memory, you should share a profile on memory allocation instead
+        of a regular one. This could be done with `/spark profiler start --alloc`.
+  - type: textarea
+    attributes:
+      label: "Spark profile(s)"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the issue
+      description: |
+        If known or reproducable, explain the circumstances that the performance issue occured in.
+        E.g. "The problem started when we have more than 30 players online..."
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Plugin config
+      description: Share your current plugin configuration.
+      value: |
+        ``` yaml
+        Paste config.yml here
+        ```
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Share any relevant information on the issue that does not fit other sections.
+    validations:
+      required: false
