@@ -1,7 +1,6 @@
 name: Bug or Incompatibility
 description: Report unexpected behavior or incompatibility with other plugins.
 labels: ["bug"]
-type: bug
 body:
   - type: textarea
     attributes:
@@ -9,6 +8,14 @@ body:
       description: Run `/version` and paste the full output here.
     validations:
       required: true
+  - type: textarea
+    attributes:
+      label: Plugin config
+      description: Share your current plugin configuration
+      value: |
+        ``` yaml
+        Paste your config.yml here
+        ```
   - type: textarea
     attributes:
       label: Describe the issue
