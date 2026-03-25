@@ -1,6 +1,5 @@
 name: Performance Issue
 description: Report any performance issues, including high memory usage or crash with Out of Memory exception.
-type: bug
 labels: ["performance"]
 body:
   - type: textarea
