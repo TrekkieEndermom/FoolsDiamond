@@ -31,8 +31,8 @@ body:
       description: |
         If known or reproducable, explain the circumstances that the performance issue occured in.
         E.g. "The problem started when we have more than 30 players online..."
-      validations:
-        required: false
+    validations:
+      required: false
   - type: textarea
     attributes:
       label: Plugin config
