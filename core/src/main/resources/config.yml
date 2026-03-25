@@ -1,0 +1,57 @@
+# Don't touch this, please.
+version: 1
+
+# Enables Bstats metrics.
+enable-metrics: true
+
+# Options on when the plugin should start doing its antics.
+enable:
+  # Enable trolling all day, every day.
+  always: false
+  # A single day the plugin will begin trolling players on.
+  # Server restart required.
+  on-date: Apr 1
+
+# Options related to the behavior of a morphing block.
+morphing-block:
+  # Enable or disable a block type's ability to disguise as another.
+  # Server restart required.
+  enable:
+    glow-lichen: true
+    diamond-ore: true # This applies to both stone and deepslate ore variants.
+
+  # Whether the plugin should use light blocks to hide light change that occurs when diamond ore changes to glow
+  # lichen and vice versa. This will result in diamond ores constantly emitting light, which may appear strange
+  # to players playing without night vision or fullbright resourcepack.
+  # Server restart required.
+  handle-light-change: true
+
+  # How likely is the block to morph into another when a player looks away. Make players feel they're going
+  # crazy when the diamond ore they thought they saw doesn't change back on triple- or quadruple-check!
+  # Valid range is 0.0 to 1.0, with 0.0 being never and 1.0 being always.
+  chance: 0.3
+
+  # Worlds the morphing blocks will appear in. Case-sensitive.
+  appear-in:
+    - world
+
+# Options related to the cache for morphing blocks.
+cache:
+  # How long a morphing block remains cached after its chunk is unloaded, measured in SECONDS. If set to 0 seconds,
+  # the block would be removed from cache immediately and must be recreated when the chunk loads again.
+  # It's generally better to keep blocks cached as long as possible, provided the server has enough memory, as
+  # recreating a morphing block is more time-consuming than simply revalidating a cached one on chunk load.
+  # Applies only to blocks unloaded after config reload.
+  # Range: 0 to max integer value.
+  ttl-after-unload: 120
+
+  # Interval in SECONDS between times a morphing block is revalidated to ensure it is still the same block
+  # the plugin expected it to be.
+  # Applies only to new or refreshed blocks after config reload.
+  # Range: 0 to max integer value.
+  ttl-after-refresh: 30
+
+  # Whether the plugin should immediately revalidate morphing blocks at or near the block being placed, destroyed,
+  # or modified. Setting this to false may improve server performance if the server has high player activity,
+  # but at the cost of the morphing blocks being outdated until their normal refresh time.
+  refresh-on-block-change: true

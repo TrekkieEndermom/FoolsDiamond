@@ -1,0 +1,24 @@
+name: ${project.parent.name}
+version: ${project.version}
+main: io.github.trekkieendermom.foolsdiamond.FoolsDiamondPlugin
+api-version: '1.21.11'
+author: TrekkieEndermom
+website: https://github.com/TrekkieEndermom/FoolsDiamond
+load: STARTUP
+
+permissions:
+  foolsdiamond.exclude:
+    description: Excludes the player from being haunted by morphing blocks.
+    default: false
+  foolsdiamond.command.reload:
+    description: Allows the player to use /fd reload
+    default: op
+  foolsdiamond.command.override:
+    description: Allows the player to use /fd override
+    default: op
+  foolsdiamond.command.status:
+    description: Allows the player to use /fd status
+    default: op
+  foolsdiamond.command.getdata:
+    description: Allows the player to use /fd getData
+    default: op
